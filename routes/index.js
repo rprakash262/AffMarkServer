@@ -430,7 +430,7 @@ router.post('/get-one-product', async (req, res) => {
       itemDescription: response.itemDescription,
       itemPrice: response.itemPrice,
       itemImage: response.itemImage,
-      platform: d.platform,
+      platform: response.platform,
       customerRating: response.customerRating,
       offer: response.offer,
       isFeatured: response.isFeatured,
