@@ -179,6 +179,7 @@ router.post('/add-new-item', async (req, res) => {
     itemImage,
     offer,
     isFeatured,
+    platform,
     customerRating,
     buyLink,
     date,
@@ -193,6 +194,7 @@ router.post('/add-new-item', async (req, res) => {
       itemPrice,
       // itemImage: itemImage[0],
       itemImage,
+      platform,
       customerRating,
       buyLink,
       isFeatured,
@@ -211,6 +213,7 @@ router.post('/add-new-item', async (req, res) => {
       itemImage: response.itemImage,
       customerRating: response.customerRating,
       buyLink: response.buyLink,
+      platform: response.platform,
       isFeatured: response.isFeatured,
       date: response.date,
     }

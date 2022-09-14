@@ -37,6 +37,10 @@ const ItemSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  platform: {
+    type: String,
+    required: true,
+  },
   buyLink: {
     type: String,
     required: true,
