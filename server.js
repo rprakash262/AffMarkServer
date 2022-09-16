@@ -7,7 +7,9 @@ const app = express();
 
 app.use('/uploads', express.static('uploads'));
 
-const api = require('./routes');
+// const api = require('./routes');
+const adminApi = require('./routes/adminRoutes');
+const mainApi = require('./routes/mainRoutes');
 const db = require('./config/keys').mongoURI;
 
 // body-parser middleware
@@ -29,7 +31,9 @@ mongoose
   .then(() => console.log('Connected to database'))
   .catch(err => console.error('Error while connecting to database', err));
 
-app.use('/', api);
+// app.use('/', api);
+app.use('/admin', adminApi);
+app.use('/main', mainApi);
 
 // serve static asset if in production
 if (process.env.NODE_ENV === 'production') {
