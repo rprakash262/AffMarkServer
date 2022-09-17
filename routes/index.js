@@ -285,7 +285,6 @@ router.get('/home-page-content', async (req, res) => {
       itemDescription: d.itemDescription,
       itemPrice: d.itemPrice,
       itemImage: d.itemImage,
-      offer: d.offer,
       platform: d.platform,
       isFeatured: d.isFeatured,
       buyLink: d.buyLink,
@@ -311,7 +310,6 @@ router.get('/home-page-content', async (req, res) => {
       itemPrice: d.itemPrice,
       itemImage: d.itemImage,
       platform: d.platform,
-      offer: d.offer,
       isFeatured: d.isFeatured,
       buyLink: d.buyLink,
     }));
@@ -338,7 +336,6 @@ router.post('/one-category-content', async (req, res) => {
       itemPrice: d.itemPrice,
       itemImage: d.itemImage,
       platform: d.platform,
-      offer: d.offer,
       isFeatured: d.isFeatured,
       buyLink: d.buyLink,
     }));
@@ -374,7 +371,6 @@ router.post('/one-subcategory-content', async (req, res) => {
       itemPrice: d.itemPrice,
       platform: d.platform,
       itemImage: d.itemImage,
-      offer: d.offer,
       isFeatured: d.isFeatured,
       buyLink: d.buyLink,
     }))
@@ -432,7 +428,6 @@ router.post('/get-one-product', async (req, res) => {
       itemImage: response.itemImage,
       platform: response.platform,
       customerRating: response.customerRating,
-      offer: response.offer,
       isFeatured: response.isFeatured,
       buyLink: response.buyLink,
     };
