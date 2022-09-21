@@ -235,6 +235,8 @@ router.post('/edit-one-product', async (req, res) => {
     itemPrice,
     itemImage,
     buyLink,
+    customerRating,
+    platform,
   } = newItemFormData;
 
   try {
@@ -246,6 +248,8 @@ router.post('/edit-one-product', async (req, res) => {
       itemPrice,
       itemImage: itemImage[0],
       buyLink,
+      customerRating,
+      platform,
     }});
 
     res.json({ success: true });
