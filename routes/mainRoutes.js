@@ -148,6 +148,7 @@ router.get('/home-page-content', async (req, res) => {
       platform: d.platform,
       isFeatured: d.isFeatured,
       buyLink: d.buyLink,
+      customerRating: d.customerRating,
     }));
 
     const itemsObj = {};
@@ -173,6 +174,7 @@ router.get('/home-page-content', async (req, res) => {
       offer: d.offer,
       isFeatured: d.isFeatured,
       buyLink: d.buyLink,
+      customerRating: d.customerRating,
     }));
 
     res.json({ success: true, result: { items: itemsObj, featuredItems } });
@@ -200,6 +202,7 @@ router.post('/one-category-content', async (req, res) => {
       offer: d.offer,
       isFeatured: d.isFeatured,
       buyLink: d.buyLink,
+      customerRating: d.customerRating,
     }));
 
     const itemsObj = {};
@@ -236,6 +239,7 @@ router.post('/one-subcategory-content', async (req, res) => {
       offer: d.offer,
       isFeatured: d.isFeatured,
       buyLink: d.buyLink,
+      customerRating: d.customerRating,
     }))
 
     res.json({ success: true, result: items });
