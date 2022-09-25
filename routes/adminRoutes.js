@@ -248,7 +248,7 @@ router.post('/edit-one-product', async (req, res) => {
       itemName,
       itemDescription,
       itemPrice,
-      itemImage: itemImage[0],
+      itemImage,
       buyLink,
       customerRating,
       platform,
