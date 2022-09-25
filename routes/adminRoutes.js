@@ -239,6 +239,8 @@ router.post('/edit-one-product', async (req, res) => {
     platform,
   } = newItemFormData;
 
+  console.log(newItemFormData)
+
   try {
     const response = await Item.updateOne( { _id: id }, { $set: {
       categoryId,
@@ -252,7 +254,7 @@ router.post('/edit-one-product', async (req, res) => {
       platform,
     }});
 
-    res.json({ success: true });
+    res.json({ success: true, result: response });
 
   } catch (err) {
     console.log(err);
