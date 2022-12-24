@@ -273,7 +273,38 @@ router.post('/get-one-product', async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-})
+});
+
+router.post('/get-similar-products', async (req, res) => {
+  const { subCategoryId, productId } = req.body;
+
+  try {
+    const response = await Item.find({ subCategoryId });
+
+    const filteredRes = response.filter(item => item._id.toString() !== productId);
+
+    const response1 = filteredRes.slice(0, 6);
+
+    const items = response1.map(d => ({
+      id: d._id,
+      categoryId: d.categoryId,
+      subCategoryId: d.subCategoryId,
+      itemName: d.itemName,
+      itemDescription: d.itemDescription,
+      itemPrice: d.itemPrice,
+      platform: d.platform,
+      itemImage: d.itemImage,
+      offer: d.offer,
+      isFeatured: d.isFeatured,
+      buyLink: d.buyLink,
+      customerRating: d.customerRating,
+    }))
+
+    res.json({ success: true, result: items });
+  } catch (err) {
+    console.log(err)
+  }
+});
 
 router.post('/delete-one-product', async (req, res) => {
   const { itemId } = req.body;
