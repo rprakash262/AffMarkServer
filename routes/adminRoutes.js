@@ -36,8 +36,6 @@ const Image = require('../models/Image');
 router.post('/add-new-category', async (req, res) => {
   const { categoryName } = req.body;
 
-  console.log(categoryName);
-
   try {
     const alreadyExist = await Category.findOne({ categoryName });
 
@@ -238,8 +236,6 @@ router.post('/edit-one-product', async (req, res) => {
     customerRating,
     platform,
   } = newItemFormData;
-
-  console.log(newItemFormData)
 
   try {
     const response = await Item.updateOne( { _id: id }, { $set: {

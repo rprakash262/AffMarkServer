@@ -324,7 +324,7 @@ router.post('/search-query', async (req, res) => {
   var searchKey = new RegExp(query, 'i')
 
   try {
-    const response = await Item.find({ itemName: searchKey });
+    const response = await Item.find({ $text: { $search: searchKey } });
 
     res.json({ success: true, result: response });
   } catch (err) {
